@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Marina Costa - Psicóloga Clínica | Terapia Individual, Casal e Infantil</title>
+    <meta name="description" content="Dra. Marina Costa - Psicóloga clínica com 15 anos de experiência. Atendimento individual, terapia de casal e psicoterapia infantil em São Paulo.">
+    <meta name="keywords" content="psicóloga, psicoterapia, terapia de casal, atendimento infantil, São Paulo, CRP 06/123456">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a3a52 0%, #4c63a6 100%);
+        }
+        
+        .gradient-bg-accent {
+            background: #2d9e6a;
+        }
+        
+        .gradient-bg-soft {
+            background: #f9fafb;
+        }
+        
+        .gradient-bg-warm {
+            background: #f9fafb;
+        }
+        
+        .gradient-bg-cool {
+            background: #f9fafb;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #d1d5db;
+        }
+        
+        .card-hover:hover input,
+        .card-hover:hover select,
+        .card-hover:hover textarea {
+            border-color: #4c63a6;
+            box-shadow: 0 0 0 3px rgba(76, 99, 166, 0.1);
+            background: #ffffff;
+        }
+        
+        .btn-primary {
+            background: #1a3a52;
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+        
+        .btn-primary:hover {
+            background: #2d5a7a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 58, 82, 0.2);
+        }
+        
+        .btn-accent {
+            background: #2d9e6a;
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+        
+        .btn-accent:hover {
+            background: #258a5a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(45, 158, 106, 0.3);
+        }
+        
+        .timeline-line {
+            background: #d1d5db;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 1px solid #e9ecef;
+        }
+        
+        .nav-mobile {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-mobile.active {
+            transform: translateX(0);
+        }
+        
+        .hero-pattern {
+            background: linear-gradient(135deg, #1a3a52 0%, #4c63a6 100%);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .success-message {
+            display: none;
+            background: #2d9e6a;
+            color: #ffffff;
+        }
+        
+        .section-title {
+            position: relative;
+            color: #1a3a52;
+            font-weight: 700;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #1a3a52 0%, #4c63a6 100%);
+            border-radius: 2px;
+        }
+        
+        .professional-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            backdrop-filter: blur(10px);
+        }
+        
+        .professional-card:hover {
+            border-color: #d1d5db;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header/Navbar -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50 border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+                        <i class="fas fa-heart text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-gray-800">Dra. Thayline Silva Menezes</h1>
+                        <p class="text-xs text-gray-600">Psicóloga Clínica</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-900 transition">Home</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-blue-900 transition">Sobre Mim</a>
+                    <a href="#especialidades" class="text-gray-700 hover:text-blue-900 transition">Especialidades</a>
+                    <a href="#como-funciona" class="text-gray-700 hover:text-blue-900 transition">Como Funciona</a>
+                    <a href="#depoimentos" class="text-gray-700 hover:text-blue-900 transition">Depoimentos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-blue-900 transition">WhatsApp</a>
+                    <button class="btn-primary px-6 py-2 rounded-full font-semibold text-sm">
+                        Agendar Consulta
+                    </button>
+                </div>
+                
+                <!-- Menu Mobile -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-gray-700"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="nav-mobile fixed top-0 left-0 w-64 h-full bg-white shadow-xl md:hidden">
+            <div class="p-4">
+                <button id="close-menu" class="mb-8">
+                    <i class="fas fa-times text-2xl text-gray-700"></i>
+                </button>
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-gray-700 hover:text-blue-900 transition">Home</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-blue-900 transition">Sobre Mim</a>
+                    <a href="#especialidades" class="text-gray-700 hover:text-blue-900 transition">Especialidades</a>
+                    <a href="#como-funciona" class="text-gray-700 hover:text-blue-900 transition">Como Funciona</a>
+                    <a href="#depoimentos" class="text-gray-700 hover:text-blue-900 transition">Depoimentos</a>
+                    <a href="#contato" class="text-gray-700 hover:text-blue-900 transition">WhatsApp</a>
+                    <button class="btn-primary px-6 py-2 rounded-full font-semibold text-sm w-full">
+                        Agendar Consulta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern pt-20 pb-16">
+        <div class="container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6" style="font-size: 48px; line-height: 1.2; letter-spacing: -0.5px;">
+                    Transforme Sua Vida Através da Psicoterapia
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8" style="opacity: 0.95;">
+                    Encontre equilíbrio, paz e bem-estar emocional
+                </p>
+                <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto" style="color: #f3f4f6;">
+                    Como psicóloga clínica com mais de 15 anos de experiência, eu ofereço um espaço seguro e acolhedor para você explorar seus sentimentos e desenvolver ferramentas para superar desafios.
+                </p>
+                <button onclick="scrollToSection('contato')" class="btn-accent text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition transform hover:scale-105">
+                    Marque sua primeira consulta
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sobre Mim -->
+    <section id="sobre" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 section-title">Sobre Mim</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <img src="https://picsum.photos/seed/psicologa/400/500.jpg" alt="Dra. Thayline Silva Menezes" class="rounded-xl shadow-xl" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <h3 class="text-2xl font-bold mb-4" style="color: #1a3a52; font-size: 32px;">Dra. Thayline Silva Menezes</h3>
+                        <p class="text-gray-700 mb-4" style="color: #6b7280; line-height: 1.8;">
+                            Sou psicóloga clínica com mais de 15 anos de experiência, dedicada a ajudar pessoas a 
+                            transformarem suas vidas através da psicoterapia. Minha abordagem combina técnicas 
+                            cognitivo-comportamentais com humanismo, oferecendo um tratamento personalizado para cada paciente.
+                        </p>
+                        <p class="text-gray-700 mb-4" style="color: #6b7280; line-height: 1.8;">
+                            Formada pela USP com pós-graduação em Terapia Cognitivo-Comportamental, sou especialista em 
+                            atendimento individual, terapia de casal e psicoterapia infantil. Meu objetivo é criar um 
+                            espaço seguro e acolhedor onde você possa explorar seus sentimentos e desenvolver 
+                            ferramentas para enfrentar os desafios da vida.
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            Acredito que cada pessoa tem o potencial para crescer e se transformar. Estou aqui para 
+                            acompanhar você nessa jornada, oferecendo apoio profissional e humano em cada etapa do processo.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3" style="background: #f0fdf4; padding: 12px; border-radius: 8px;">
+                                <i class="fas fa-check-circle text-green-600" style="color: #2d9e6a;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Pós-graduação em Terapia Cognitivo-Comportamental</span>
+                            </div>
+                            <div class="flex items-center space-x-3" style="background: #f0fdf4; padding: 12px; border-radius: 8px;">
+                                <i class="fas fa-check-circle text-green-600" style="color: #2d9e6a;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Especialista em atendimento individual e de casal</span>
+                            </div>
+                            <div class="flex items-center space-x-3" style="background: #f0fdf4; padding: 12px; border-radius: 8px;">
+                                <i class="fas fa-check-circle text-green-600" style="color: #2d9e6a;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Certificação em Terapia de Casal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Especialidades -->
+    <section id="especialidades" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 section-title">Especialidades</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Card 1: Atendimento Individual -->
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-hover professional-card" style="border: 1px solid #e5e7eb; padding: 32px; border-radius: 12px;">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6" style="border-radius: 12px;">
+                            <i class="fas fa-user text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="color: #1a3a52; font-size: 20px;">Atendimento Individual</h3>
+                        <p class="text-gray-600 mb-6" style="color: #6b7280;">
+                            Psicoterapia para depressão, ansiedade, autoestima, traumas e autoconhecimento
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Ansiedade</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Depressão</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Fobias</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Autoestima</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Luto</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Card 2: Terapia de Casal -->
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-hover professional-card" style="border: 1px solid #e5e7eb; padding: 32px; border-radius: 12px;">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6" style="border-radius: 12px;">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="color: #1a3a52; font-size: 20px;">Terapia de Casal</h3>
+                        <p class="text-gray-600 mb-6" style="color: #6b7280;">
+                            Ajudar casais a melhorar comunicação e fortalecer o relacionamento
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Conflitos relacionais</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Comunicação</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Infidelidade</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Crises no casamento</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Intimidade</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Card 3: Atendimento Infantil -->
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-hover professional-card" style="border: 1px solid #e5e7eb; padding: 32px; border-radius: 12px;">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6" style="border-radius: 12px;">
+                            <i class="fas fa-child text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="color: #1a3a52; font-size: 20px;">Atendimento Infantil</h3>
+                        <p class="text-gray-600 mb-6" style="color: #6b7280;">
+                            Psicoterapia infantil para crianças enfrentando dificuldades emocionais
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Problemas de comportamento</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Ansiedade infantil</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Dificuldades escolares</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">Adaptação</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-chevron-right text-sm" style="color: #4c63a6;"></i>
+                                <span class="text-gray-700" style="color: #6b7280;">TDAH</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Como Funciona -->
+    <section id="como-funciona" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 section-title">Como Funciona</h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 gradient-bg rounded-lg flex items-center justify-center mx-auto mb-6" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.2);">
+                            <span class="text-white text-2xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="color: #1a3a52;">Agendamento</h3>
+                        <p class="text-gray-600 mb-4" style="color: #6b7280;">
+                            Entre em contato para agendar sua primeira consulta
+                        </p>
+                        <button onclick="scrollToSection('agendamento')" class="font-semibold" style="color: #4c63a6;">
+                            Agendar →
+                        </button>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 gradient-bg rounded-lg flex items-center justify-center mx-auto mb-6" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.2);">
+                            <span class="text-white text-2xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="color: #1a3a52;">Primeira Consulta</h3>
+                        <p class="text-gray-600 mb-4" style="color: #6b7280;">
+                            Conhecimento inicial e avaliação das necessidades
+                        </p>
+                        <p class="text-sm text-gray-500" style="color: #9ca3af;">50 minutos</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 gradient-bg rounded-lg flex items-center justify-center mx-auto mb-6" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.2);">
+                            <span class="text-white text-2xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="color: #1a3a52;">Plano Terapêutico</h3>
+                        <p class="text-gray-600 mb-4" style="color: #6b7280;">
+                            Desenvolvimento de estratégias personalizadas
+                        </p>
+                        <p class="text-sm text-gray-500" style="color: #9ca3af;">Individual para cada caso</p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 gradient-bg rounded-lg flex items-center justify-center mx-auto mb-6" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(26, 58, 82, 0.2);">
+                            <span class="text-white text-2xl font-bold">4</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4" style="color: #1a3a52;">Acompanhamento</h3>
+                        <p class="text-gray-600 mb-4" style="color: #6b7280;">
+                            Acompanhamento contínuo com foco em resultados
+                        </p>
+                        <p class="text-sm text-gray-500" style="color: #9ca3af;">Sessões semanais</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 section-title">Depoimentos</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Depoimento 1 -->
+                    <div class="rounded-lg p-6 shadow-md professional-card" style="background: #fafbfc; border: 1px solid #e5e7eb; border-left: 4px solid #4c63a6; border-radius: 8px; padding: 24px;">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/seed/joao/50/50.jpg" alt="João Silva" class="w-12 h-12 rounded-full mr-3" style="border: 2px solid #d1d5db; border-radius: 50%;">
+                            <div>
+                                <h4 class="font-semibold" style="color: #1a3a52; font-weight: 600;">João Silva</h4>
+                                <div class="text-amber-500" style="color: #f59e0b; font-size: 14px;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic" style="color: #6b7280; font-style: italic; font-size: 14px; line-height: 1.6;">
+                            "A Dra. Marina me ajudou muito com minha ansiedade. Hoje consigo lidar bem melhor com situações estressantes."
+                        </p>
+                    </div>
+                    
+                    <!-- Depoimento 2 -->
+                    <div class="rounded-lg p-6 shadow-md professional-card" style="background: #fafbfc; border: 1px solid #e5e7eb; border-left: 4px solid #4c63a6; border-radius: 8px; padding: 24px;">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/seed/casal/50/50.jpg" alt="Paula e Roberto" class="w-12 h-12 rounded-full mr-3" style="border: 2px solid #d1d5db; border-radius: 50%;">
+                            <div>
+                                <h4 class="font-semibold" style="color: #1a3a52; font-weight: 600;">Paula e Roberto</h4>
+                                <div class="text-amber-500" style="color: #f59e0b; font-size: 14px;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic" style="color: #6b7280; font-style: italic; font-size: 14px; line-height: 1.6;">
+                            "Nossas brigas frequentes diminuíram muito. A terapia de casal abriu nossa comunicação."
+                        </p>
+                    </div>
+                    
+                    <!-- Depoimento 3 -->
+                    <div class="rounded-lg p-6 shadow-md professional-card" style="background: #fafbfc; border: 1px solid #e5e7eb; border-left: 4px solid #4c63a6; border-radius: 8px; padding: 24px;">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/seed/mae/50/50.jpg" alt="Mãe de Miguel" class="w-12 h-12 rounded-full mr-3" style="border: 2px solid #d1d5db; border-radius: 50%;">
+                            <div>
+                                <h4 class="font-semibold" style="color: #1a3a52; font-weight: 600;">Mãe de Miguel (8 anos)</h4>
+                                <div class="text-amber-500" style="color: #f59e0b; font-size: 14px;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic" style="color: #6b7280; font-style: italic; font-size: 14px; line-height: 1.6;">
+                            "Meu filho melhorou muito na escola e em casa. Recomendo muito a Dra. Marina!"
+                        </p>
+                    </div>
+                    
+                    <!-- Depoimento 4 -->
+                    <div class="rounded-lg p-6 shadow-md professional-card" style="background: #fafbfc; border: 1px solid #e5e7eb; border-left: 4px solid #4c63a6; border-radius: 8px; padding: 24px;">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/seed/ana/50/50.jpg" alt="Ana Costa" class="w-12 h-12 rounded-full mr-3" style="border: 2px solid #d1d5db; border-radius: 50%;">
+                            <div>
+                                <h4 class="font-semibold" style="color: #1a3a52; font-weight: 600;">Ana Costa</h4>
+                                <div class="text-amber-500" style="color: #f59e0b; font-size: 14px;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic" style="color: #6b7280; font-style: italic; font-size: 14px; line-height: 1.6;">
+                            "Profissional competente, atenciosa e que realmente se importa com seus pacientes."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Informações Práticas -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 section-title">Informações Práticas</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="bg-white rounded-lg p-6 text-center card-hover" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px;">
+                        <i class="fas fa-bullseye text-3xl mb-4" style="color: #1a3a52; font-size: 32px;"></i>
+                        <h3 class="font-semibold mb-2" style="color: #1a3a52; font-weight: 600; font-size: 14px;">Especialidades</h3>
+                        <p class="text-gray-600 text-sm" style="color: #6b7280; font-size: 13px;">Psicoterapia individual, casal e infantil</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center card-hover" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px;">
+                        <i class="fas fa-clock text-3xl mb-4" style="color: #1a3a52; font-size: 32px;"></i>
+                        <h3 class="font-semibold mb-2" style="color: #1a3a52; font-weight: 600; font-size: 14px;">Duração</h3>
+                        <p class="text-gray-600 text-sm" style="color: #6b7280; font-size: 13px;">50 minutos por sessão</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center card-hover" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px;">
+                        <i class="fas fa-dollar-sign text-3xl mb-4" style="color: #1a3a52; font-size: 32px;"></i>
+                        <h3 class="font-semibold mb-2" style="color: #1a3a52; font-weight: 600; font-size: 14px;">Valores</h3>
+                        <p class="text-gray-600 text-sm" style="color: #6b7280; font-size: 13px;">Consultar</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center card-hover" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px;">
+                        <i class="fas fa-map-marker-alt text-3xl mb-4" style="color: #1a3a52; font-size: 32px;"></i>
+                        <h3 class="font-semibold mb-2" style="color: #1a3a52; font-weight: 600; font-size: 14px;">Local</h3>
+                        <p class="text-gray-600 text-sm" style="color: #6b7280; font-size: 13px;">São Paulo - SP | Online</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 text-center card-hover" style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px;">
+                        <i class="fas fa-calendar text-3xl mb-4" style="color: #1a3a52; font-size: 32px;"></i>
+                        <h3 class="font-semibold mb-2" style="color: #1a3a52; font-weight: 600; font-size: 14px;">Agendamento</h3>
+                        <p class="text-gray-600 text-sm" style="color: #6b7280; font-size: 13px;">Online ou WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contato WhatsApp -->
+    <section id="contato" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 section-title">Fale Conosco</h2>
+                
+                <div id="whatsapp-success" class="success-message text-white p-6 rounded-lg mb-6" style="display: none;">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Mensagem preparada para WhatsApp! Redirecionando...
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8 professional-card" style="border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div class="mb-6">
+                        <label class="block font-semibold mb-2" style="color: #1a3a52; font-weight: 600; font-size: 14px; margin-bottom: 8px;">Sua Mensagem</label>
+                        <textarea id="whatsapp-mensagem" rows="6" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:border-transparent" style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 16px; color: #6b7280; resize: vertical;" placeholder="Digite aqui sua mensagem..."></textarea>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block font-semibold mb-2" style="color: #1a3a52; font-weight: 600; font-size: 14px; margin-bottom: 8px;">Seu Nome *</label>
+                            <input type="text" id="whatsapp-nome" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:border-transparent" style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 16px; color: #6b7280;" placeholder="Seu nome completo">
+                        </div>
+                        <div>
+                            <label class="block font-semibold mb-2" style="color: #1a3a52; font-weight: 600; font-size: 14px; margin-bottom: 8px;">Seu Telefone *</label>
+                            <input type="tel" id="whatsapp-telefone" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:border-transparent" style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 16px; color: #6b7280;" placeholder="(11) 98765-4321">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block font-semibold mb-2" style="color: #1a3a52; font-weight: 600; font-size: 14px; margin-bottom: 8px;">Tipo de Atendimento</label>
+                        <select id="whatsapp-tipo" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:border-transparent" style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 16px; color: #6b7280;">
+                            <option value="">Selecione...</option>
+                            <option value="individual">Individual</option>
+                            <option value="casal">Casal</option>
+                            <option value="infantil">Infantil</option>
+                            <option value="duvida">Dúvida geral</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="whatsapp-btn" class="w-full py-3 rounded-lg font-semibold flex items-center justify-center" style="background: #25d366; color: #ffffff; padding: 14px 24px; font-weight: 600; border-radius: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); transition: 0.3s ease;">
+                        <i class="fab fa-whatsapp mr-2" style="font-size: 20px;"></i>
+                        Enviar Mensagem pelo WhatsApp
+                    </button>
+                    
+                    <p class="text-center text-sm text-gray-500 mt-4" style="color: #9ca3af;">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Você será redirecionado para o WhatsApp para enviar sua mensagem diretamente
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center">
+                                <i class="fas fa-heart text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold">Dra. Thayline Silva Menezes</h3>
+                                <p class="text-sm text-gray-400">Psicóloga Clínica</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            CRP 06/123456<br>
+                            15 anos de experiência
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4" style="color: #ffffff;">Contato</h4>
+                        <div class="space-y-2">
+                            <p class="text-gray-400" style="color: #cbd5e1;">📍 São Paulo - SP</p>
+                            <p class="text-gray-400" style="color: #cbd5e1;">📧 thayline@psicologa.com.br</p>
+                            <p class="text-gray-400" style="color: #cbd5e1;">📱 (11) 98765-4321</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4" style="color: #ffffff;">Links Úteis</h4>
+                        <div class="space-y-2">
+                            <a href="#" class="block text-gray-400 hover:text-white transition" style="color: #cbd5e1;">Política de Privacidade</a>
+                            <a href="#" class="block text-gray-400 hover:text-white transition" style="color: #cbd5e1;">Termos de Uso</a>
+                            <a href="#" class="block text-gray-400 hover:text-white transition" style="color: #cbd5e1;">Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold mb-4" style="color: #ffffff;">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition" style="background: #1e293b; color: #4c63a6;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition" style="background: #1e293b; color: #4c63a6;">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full flex items-center justify-center transition" style="background: #1e293b; color: #4c63a6;">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t pt-8 text-center" style="border-top: 1px solid #1e293b;">
+                    <p style="color: #cbd5e1;">&copy; 2024 Dra. Thayline Silva Menezes - Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
