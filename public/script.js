@@ -299,7 +299,7 @@ whatsappBtn.addEventListener('click', () => {
     // Show success message
     whatsappSuccess.style.display = 'block';
     
-    // Build WhatsApp URL
+    // WhatsApp URL
     const whatsappUrl = `https://wa.me/5511987654321?text=${encodeURIComponent(whatsappMessage)}`;
     
     // Open WhatsApp after 1.5 seconds
@@ -321,5 +321,5 @@ whatsappBtn.addEventListener('click', () => {
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Site da Dra. Marina Costa - Carregado com sucesso!');
+    console.log('Site da Dra. Thayline Silva Menezes - Carregado com sucesso!');
 });
