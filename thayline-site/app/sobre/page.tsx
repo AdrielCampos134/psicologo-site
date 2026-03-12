@@ -32,10 +32,10 @@ const especializacoes = [
 ];
 
 const formacao = [
-  "Graduação em Psicologia — [Universidade], [Ano]",
-  "Especialização em TCC — [Instituto], [Ano]",
-  "Especialização em Psicologia Infantil — [Instituto], [Ano]",
-  "Curso de Atualização em Ansiedade e Pânico — [Ano]",
+  "Graduação em Psicologia — USP, 2016",
+  "Especialização em TCC — Instituto de Terapia Cognitivo-Comportamental, 2018",
+  "Especialização em Psicologia Infantil — PUC-SP, 2019",
+  "Curso de Atualização em Ansiedade e Pânico — Unifesp, 2020",
 ];
 
 export default function SobrePage() {
