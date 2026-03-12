@@ -49,7 +49,7 @@ export default function SobrePage() {
                 src="/img/Psi1menor.jpg"
                 alt="Dra. Thayline Silva Menezes"
                 width={560}
-                height={7500}
+                height={700}
                 priority
               />
             </div>
